@@ -11,7 +11,24 @@ function Clue({
   setShowSpaceCount,
   showSpaceCountPerLine,
   setShowSpaceCountPerLine,
+  highlightedWords,
+  setHighlightedWords,
 }) {
+  const toggleWordHighlight = (wordNumber) => {
+    setHighlightedWords((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(wordNumber)) {
+        newSet.delete(wordNumber);
+      } else {
+        newSet.add(wordNumber);
+      }
+      return newSet;
+    });
+  };
+
+  const resetHighlighting = () => {
+    setHighlightedWords(new Set());
+  };
   const clueText = `The time and the tide wait for no man
 
 A light will show you the way, but won't show you land
@@ -157,6 +174,10 @@ Find the 72 squares to which this puzzle is bound`;
             </span>
           </label>
         </div>
+        <div className="clue-controls-divider"></div>
+        <button className="reset-button" onClick={resetHighlighting}>
+          Reset word highlights
+        </button>
       </div>
       <div className="clue-container">
         <div className="clue-text">
@@ -217,7 +238,18 @@ Find the 72 squares to which this puzzle is bound`;
                             ))}
                           </span>
                         )}
-                        <span className="clue-word">{word.text}</span>
+                        <span
+                          className={`clue-word ${
+                            highlightedWords.has(word.wordNumberEntireClue)
+                              ? "clue-word-highlighted"
+                              : ""
+                          }`}
+                          onClick={() =>
+                            toggleWordHighlight(word.wordNumberEntireClue)
+                          }
+                        >
+                          {word.text}
+                        </span>
                       </span>
                       {(showSpaceCount || showSpaceCountPerLine) &&
                         wordIndex < line.words.length - 1 && (

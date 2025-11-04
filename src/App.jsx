@@ -12,6 +12,7 @@ function App() {
   const [showWordCountEntireClue, setShowWordCountEntireClue] = useState(false);
   const [showSpaceCount, setShowSpaceCount] = useState(false);
   const [showSpaceCountPerLine, setShowSpaceCountPerLine] = useState(false);
+  const [highlightedWords, setHighlightedWords] = useState(new Set());
 
   return (
     <div className="app-wrapper">
@@ -50,6 +51,8 @@ function App() {
             setShowSpaceCount={setShowSpaceCount}
             showSpaceCountPerLine={showSpaceCountPerLine}
             setShowSpaceCountPerLine={setShowSpaceCountPerLine}
+            highlightedWords={highlightedWords}
+            setHighlightedWords={setHighlightedWords}
           />
         )}
       </div>
