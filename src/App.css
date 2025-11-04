@@ -269,6 +269,14 @@
   color: purple;
 }
 
+.checkbox-label-space-count {
+  color: green;
+}
+
+.checkbox-label-space-count-per-line {
+  color: darkgreen;
+}
+
 .clue-container {
   display: flex;
   justify-content: center;
@@ -316,8 +324,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   white-space: nowrap;
+}
+
+.clue-number-separator {
+  color: #333;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .clue-letter-count {
@@ -336,6 +350,37 @@
   color: purple;
   font-size: 12px;
   font-weight: 600;
+}
+
+.clue-space-count {
+  color: green;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.clue-space-count-per-line {
+  color: darkgreen;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.clue-space-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.clue-space-numbers {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.clue-space {
+  display: inline-block;
+  min-width: 4px;
 }
 
 .clue-word {

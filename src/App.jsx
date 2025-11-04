@@ -6,10 +6,12 @@ import Clue from './components/Clue'
 
 // Main App Component with Tabs
 function App() {
-  const [activeTab, setActiveTab] = useState('grid-flexer')
-  const [showLetterCount, setShowLetterCount] = useState(true)
-  const [showWordNumber, setShowWordNumber] = useState(true)
-  const [showWordCountEntireClue, setShowWordCountEntireClue] = useState(true)
+  const [activeTab, setActiveTab] = useState("clock");
+  const [showLetterCount, setShowLetterCount] = useState(false);
+  const [showWordNumber, setShowWordNumber] = useState(false);
+  const [showWordCountEntireClue, setShowWordCountEntireClue] = useState(false);
+  const [showSpaceCount, setShowSpaceCount] = useState(false);
+  const [showSpaceCountPerLine, setShowSpaceCountPerLine] = useState(false);
 
   return (
     <div className="app-wrapper">
@@ -37,13 +39,17 @@ function App() {
         {activeTab === "grid-flexer" && <GridFlexer />}
         {activeTab === "clock" && <Clock />}
         {activeTab === "clue" && (
-          <Clue 
+          <Clue
             showLetterCount={showLetterCount}
             setShowLetterCount={setShowLetterCount}
             showWordNumber={showWordNumber}
             setShowWordNumber={setShowWordNumber}
             showWordCountEntireClue={showWordCountEntireClue}
             setShowWordCountEntireClue={setShowWordCountEntireClue}
+            showSpaceCount={showSpaceCount}
+            setShowSpaceCount={setShowSpaceCount}
+            showSpaceCountPerLine={showSpaceCountPerLine}
+            setShowSpaceCountPerLine={setShowSpaceCountPerLine}
           />
         )}
       </div>
