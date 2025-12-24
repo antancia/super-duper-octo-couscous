@@ -1,6 +1,8 @@
-# Numbers Game Tool
+# NYTH - Clue #6 tools
 
-A React app displaying a grid of numbered squares matching the clock layout.
+A quick app made for exploring some theories for the New York Treasure Hunt's (2025) clue #6. 
+
+Mostly written using Cursor Agent.
 
 ## Getting Started
 
